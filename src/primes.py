@@ -17,6 +17,32 @@ def sample_odd_number():
 
     return random_num
 
+def sieve_of_eratosthenes(limit: int):
+    """Etsii jokaisen alkuluvun väliltä [0, limit] tehokkaasti.
+
+    Args:
+        limit: Kokonaisluku, joka on suurempi kuin 1. Yläraja alkuluvuille joita algoritmi etsii.
+
+    Returns: Lista alkuluvuista välillä [0, limit].
+    """
+
+    if limit < 2:
+        return []
+    
+    numbers = [True for _ in range(0, limit + 1)]
+    numbers[0] = numbers[1] = False
+
+    for i in range(2, int(limit**0.5) + 1):
+        if numbers[i] == True:
+            j = 0
+            while i**2 + j*i <= limit:
+                numbers[i**2 + j*i] = False
+                j += 1
+
+    primes = [i for i, is_prime in enumerate(numbers) if is_prime]
+
+    return primes
+
 def miller_rabin_test(n: int, rounds=10):
     """Miller-Rabin-testi antaa stokastisen arvion siitä onko n alkuluku.
 
