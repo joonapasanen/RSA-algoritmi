@@ -1,5 +1,5 @@
 import unittest
-from primes import sample_odd_number, miller_rabin_test, sieve_of_eratosthenes
+from primes import sample_odd_number, miller_rabin_test, sieve_of_eratosthenes, get_prime
 
 class TestSampleOddNumber(unittest.TestCase):
     def setUp(self):
@@ -58,3 +58,6 @@ class TestSieveOfEratosthenes(unittest.TestCase):
     def test_negative_input(self):
         self.assertEqual(sieve_of_eratosthenes(-21), [])
     
+class TestGetPrime(unittest.TestCase):
+    def setUp(self):
+        pass

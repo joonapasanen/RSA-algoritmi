@@ -5,7 +5,7 @@ def sample_odd_number():
     """Luo parittoman kokonaisluvun väliltä [2^1023, 2^1024] satunnaisesti.
 
     Returns:
-        Pariton kokonaisluku väliltä [2^1023, 2^1024].
+        Pariton kokonaisluku väliltä [2^1023, 2^1024).
     """
 
     upper_bound = 2**1024
@@ -76,3 +76,27 @@ def miller_rabin_test(n: int, rounds=10):
             return False
 
     return True
+
+def get_prime():
+    """Löytää todennäköisen alkuluvun tehokkaasti tarkastamalla ensin onko luvulla pieniä alkuluku tekijöitä 
+       ja käyttäen sitten Miller-Rabin-algoritmia.
+
+    Returns:
+        int: Todennäköinen alkuluku.
+    """
+    small_primes_list = sieve_of_eratosthenes(500)
+
+    p = None
+    while not p:
+        num = sample_odd_number()
+
+        for small_prime in small_primes_list:
+            if num % small_prime == 0:
+                break
+ 
+        if not miller_rabin_test(num, rounds=10):
+            continue
+        else:
+            p = num
+
+    return p
