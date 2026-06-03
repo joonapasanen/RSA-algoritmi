@@ -14,6 +14,12 @@ class TestExtendedEuclidianAlgorithm(unittest.TestCase):
     def test_gcd_784_and_12056_gcd(self):
         self.assertEqual(8, extended_euclidian_algorithm(784, 12056)[2])
 
+    def test_gcd_two_primes(self):
+        self.assertEqual(1, extended_euclidian_algorithm(7, 23)[2])
+
+    def test_gcd_2_and_large_power_of_two(self):
+        self.assertEqual(2, extended_euclidian_algorithm(2, 2**123)[2])
+
 class TestGenerateKeys(unittest.TestCase):
     def setUp(self):
         self.public_key, self.private_key = generate_keys()

@@ -1,4 +1,5 @@
 import unittest
+import math
 from primes import sample_odd_number, miller_rabin_test, sieve_of_eratosthenes, get_prime
 
 class TestSampleOddNumber(unittest.TestCase):
@@ -60,4 +61,9 @@ class TestSieveOfEratosthenes(unittest.TestCase):
     
 class TestGetPrime(unittest.TestCase):
     def setUp(self):
-        pass
+        self.prime = get_prime()
+
+    def test_is_coprime_prime_to_another_prime(self):
+        for x in [2, 5, 11, 13, 29, 41, 61, 67, 83, 97]:
+            self.assertEqual(math.gcd(x, self.prime), 1)
+        
