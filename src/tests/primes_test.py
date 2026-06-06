@@ -18,31 +18,6 @@ class TestSampleOddNumber(unittest.TestCase):
         for num in self.nums:
             self.assertEqual(num >= 2**1023, True)
 
-class TestMillerRabinTest(unittest.TestCase):
-    def setUp(self):
-        pass
-
-    def test_small_even_prime(self):
-        self.assertEqual(miller_rabin_test(2), False)
-
-    def test_small_odd_prime(self):
-        self.assertEqual(miller_rabin_test(7), True)
-
-    def test_small_odd_composite(self):
-        self.assertEqual(miller_rabin_test(15), False)
-
-    def test_large_odd_prime(self):
-        self.assertEqual(miller_rabin_test(685050345688069904033056649023), True)
-
-    def test_large_odd_composite(self):
-        self.assertEqual(miller_rabin_test(804050816046724198023053199073), False)
-
-    def test_small_carmichael_number(self):
-        self.assertEqual(miller_rabin_test(561), False)
-
-    def test_large_carmichael_number(self):
-        self.assertEqual(miller_rabin_test(2810864562635368426005268142616001), False)
-
 class TestSieveOfEratosthenes(unittest.TestCase):
     def setUp(self):
         self.primes_list = [
@@ -64,7 +39,30 @@ class TestSieveOfEratosthenes(unittest.TestCase):
     
     def test_negative_input(self):
         self.assertEqual(sieve_of_eratosthenes(-21), [])
-    
+
+
+class TestMillerRabinTest(unittest.TestCase):
+    def setUp(self):
+        self.primes = [7, 13, 685050345688069904033056649023]
+        self.carmichaels = [561, 2810864562635368426005268142616001]
+        self.composites = [4, 15, 804050816046724198023053199073]
+
+    def test_with_2(self):
+        self.assertEqual(miller_rabin_test(2), False)
+
+    def test_primes(self):
+        for prime in self.primes:
+            self.assertEqual(miller_rabin_test(prime), True)
+
+    def test_carmichaels(self):
+        # Carmichaelin numerot ovat numerojoukko, joka huijaa yksinkertaiset alkuluku testit kuten Fermat'n testin.
+        for carmichael in self.carmichaels:
+            self.assertEqual(miller_rabin_test(carmichael), False)
+                
+    def test_composites(self):
+        for composite in self.composites:
+            self.assertEqual(miller_rabin_test(composite), False)
+
 class TestGetPrime(unittest.TestCase):
     def setUp(self):
         self.prime = get_prime()
