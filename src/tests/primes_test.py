@@ -4,16 +4,19 @@ from primes import sample_odd_number, miller_rabin_test, sieve_of_eratosthenes, 
 
 class TestSampleOddNumber(unittest.TestCase):
     def setUp(self):
-        self.num = sample_odd_number()
+        self.nums = [sample_odd_number() for _ in range(100)]
 
     def test_number_is_odd(self):
-        self.assertEqual(self.num % 2, 1)
+        for num in self.nums:
+            self.assertEqual(num % 2, 1)
 
     def test_number_is_below_upper_bound(self):
-        self.assertEqual(self.num <= 2**1024, True)
+        for num in self.nums:
+            self.assertEqual(num <= 2**1024, True)
 
     def test_number_is_above_lower_bound(self):
-        self.assertEqual(self.num >= 2**1023, True)
+        for num in self.nums:
+            self.assertEqual(num >= 2**1023, True)
 
 class TestMillerRabinTest(unittest.TestCase):
     def setUp(self):

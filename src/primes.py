@@ -2,7 +2,7 @@ import secrets
 import random
 
 def sample_odd_number():
-    """Luo parittoman kokonaisluvun väliltä [2^1023, 2^1024] satunnaisesti.
+    """Luo parittoman kokonaisluvun väliltä [2^1023, 2^1024) satunnaisesti.
 
     Returns:
         Pariton kokonaisluku väliltä [2^1023, 2^1024).
@@ -11,9 +11,10 @@ def sample_odd_number():
     upper_bound = 2**1024
     lower_bound = 2**1023
 
-    random_num = 0
-    while random_num % 2 == 0:
-        random_num = secrets.randbelow(upper_bound - lower_bound) + lower_bound
+    random_num = secrets.randbelow(upper_bound - lower_bound) + lower_bound
+    
+    if random_num % 2 == 0:
+        random_num += 1
 
     return random_num
 
