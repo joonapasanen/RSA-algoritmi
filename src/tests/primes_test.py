@@ -45,18 +45,21 @@ class TestMillerRabinTest(unittest.TestCase):
 
 class TestSieveOfEratosthenes(unittest.TestCase):
     def setUp(self):
-        pass
-
-    def test_primes_less_than_or_equal_20(self):
-        self.assertEqual(sieve_of_eratosthenes(20), [2, 3, 5, 7, 11, 13, 17, 19])
-
-    def test_primes_less_than_or_equal_50(self):
-        self.assertEqual(sieve_of_eratosthenes(50), [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47])
+        self.primes_list = [
+            2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97,
+            101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 
+            197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307,
+            311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421,
+            431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499
+        ]
 
     def test_primes_less_than_or_equal_100(self):
-        self.assertEqual(sieve_of_eratosthenes(100), [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97])
+        self.assertEqual(sieve_of_eratosthenes(100), self.primes_list[:25])
 
-    def test_primes_less_than_or_equal_1(self):
+    def test_primes_less_than_or_equal_500(self):
+        self.assertEqual(sieve_of_eratosthenes(500), self.primes_list) 
+
+    def test_input_is_1(self):
         self.assertEqual(sieve_of_eratosthenes(1), [])
     
     def test_negative_input(self):
