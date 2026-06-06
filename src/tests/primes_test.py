@@ -40,7 +40,6 @@ class TestSieveOfEratosthenes(unittest.TestCase):
     def test_negative_input(self):
         self.assertEqual(sieve_of_eratosthenes(-21), [])
 
-
 class TestMillerRabinTest(unittest.TestCase):
     def setUp(self):
         self.primes = [7, 13, 685050345688069904033056649023]
@@ -67,7 +66,14 @@ class TestGetPrime(unittest.TestCase):
     def setUp(self):
         self.prime = get_prime()
 
-    def test_is_coprime_prime_to_another_prime(self):
-        for x in [2, 5, 11, 13, 29, 41, 61, 67, 83, 97]:
-            self.assertEqual(math.gcd(x, self.prime), 1)
-        
+    def test_number_is_odd(self):
+        self.assertEqual(self.prime % 2, 1)
+
+    def test_number_is_below_upper_bound(self):
+        self.assertEqual(self.prime <= 2**1024, True)
+
+    def test_number_is_above_lower_bound(self):
+        self.assertEqual(self.prime >= 2**1023, True)
+
+    def test_is_prime(self):
+        self.assertEqual(miller_rabin_test(self.prime), True)

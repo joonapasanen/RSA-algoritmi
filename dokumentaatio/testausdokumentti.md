@@ -14,6 +14,8 @@ Sieve of Eratosthenes -algoritmin toiminta (primes.py moduulista). Yksikkötesti
 
 Miller-Rabin-testin toiminta (primes.py moduulista). Miller-Rabin-testin yksikkötestit testaavat, että testi osaa tunnistaa alkuluvut, komposiittiluvut, sekä Carmichaelin luvut, jotka ovat joukko komposiittilukuja, jotka kuitenkin huijaavat yksinkertaisemmat alkulukutestit kuten Fermat'n testin. Käytän jokaisessa kategoriassa syötteinä kolmea eri lukua, joista yksi on pieni luku ja kaksi suuria 1024 bittisiä lukuja, joiden on tarkoitus edustaa syötteitä joita algoritmi ottaa vastaan RSA-algoritmia käyttäessä. Miller-Rabin on pohjimmiltaan stokastinen testi, mutta kun kierrosten määrä on 15 (joka se on automaattisesti toteutuksessa) niin todennäköisyys että algoritmi palauttaa väärän vastauksen on 1 - 0.999999999 eli noin 1 kerran miljardista. Tämän perusteella testi toimii käytännössä determinisesti.
 
+get_prime funktion (primes.py moduuli) toiminta. Funktio hyödyntää yllä mainittuja 3 funktiota ja sen on tarkoitus palauttaa 1024 bittinen alkuluku. Yksikkötestit luovat funktiolla luvun, jonka jälkeen ne testaavat että luku kuuluu välille [2^1023, 2^1024), luku on pariton ja että luku on alkuluku. Alkuluvun testaamiseen käytän Miller-Rabin-testiä koska sen toiminta testataan ennen get_prime funktiota. Funktio käyttää myös itse Miller-Rabin testiä, mutta testin tarkoituksena on varmistaa että get_prime funktio ei vääristä Miller-Rabin testin tulosta millään tavalla.
+
 ## Miten testit voi toistaa?
 
 Testit voi suorittaa komennolla: poetry run coverage run --branch -m pytest
