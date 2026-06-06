@@ -1,5 +1,5 @@
 import unittest
-import math
+import sympy
 from primes import sample_odd_number, miller_rabin_test, sieve_of_eratosthenes, get_prime
 
 class TestSampleOddNumber(unittest.TestCase):
@@ -76,4 +76,4 @@ class TestGetPrime(unittest.TestCase):
         self.assertEqual(self.prime >= 2**1023, True)
 
     def test_is_prime(self):
-        self.assertEqual(miller_rabin_test(self.prime), True)
+        self.assertEqual(sympy.isprime(self.prime), True)

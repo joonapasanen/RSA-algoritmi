@@ -2,7 +2,7 @@
 
 ## Yksikkötestauksen kattavuusraportti
 
-![](kuvat/kattavuusraportti.png)
+![alt text](kuvat/image.png)
 
 ## Mitä on testattu ja minkälaisilla syötteillä
 
@@ -14,13 +14,15 @@ Sieve of Eratosthenes -algoritmin toiminta (primes.py moduulista). Yksikkötesti
 
 Miller-Rabin-testin toiminta (primes.py moduulista). Miller-Rabin-testin yksikkötestit testaavat, että testi osaa tunnistaa alkuluvut, komposiittiluvut, sekä Carmichaelin luvut, jotka ovat joukko yhdistettyjä lukuja, jotka kuitenkin huijaavat yksinkertaisemmat alkulukutestit kuten Fermat'n testin. Käytän jokaisessa kategoriassa syötteinä kahta eri lukua, joista yksi on pieni luku ja toinen suuri 1024 bittinen luku, jonka on tarkoitus edustaa syötteitä joita algoritmi ottaa vastaan RSA-algoritmia käyttäessä. Miller-Rabin on pohjimmiltaan stokastinen testi, mutta kun kierrosten määrä on 15 (joka se on automaattisesti toteutuksessa) niin todennäköisyys että algoritmi palauttaa väärän vastauksen on 1 - 0.999999999 eli noin 1 kerran miljardista. Tämän perusteella testi toimii käytännössä determinisesti.
 
-get_prime funktion (primes.py moduuli) toiminta. Funktio hyödyntää yllä mainittuja 3 funktiota ja sen on tarkoitus palauttaa 1024 bittinen alkuluku. Yksikkötestit luovat funktiolla luvun, jonka jälkeen ne testaavat että luku kuuluu välille [2^1023, 2^1024), luku on pariton ja että luku on alkuluku. Alkuluvun testaamiseen käytän Miller-Rabin-testiä koska sen toiminta testataan ennen get_prime funktiota. Funktio käyttää myös itse Miller-Rabin testiä, mutta testin tarkoituksena on varmistaa että get_prime funktio ei vääristä Miller-Rabin testin tulosta millään tavalla.
-
 Laajenettu Eukleideen -algoritmi (rsa.py moduuli). Algoritmi etsii suurimman yhteisen tekijän kahdelle eri luvulle, sekä sen Bezout kertoimet, eli kertoimet x, y joille pätee että xa + yb = gcd(a, b). Yksikkötestit testaavat että algoritmi löytää oikeat arvot x, y ja gcd(a, b) kolmelle eri syötteelle. Yksi näistä on pari pieniä yhdistettyjä lukuja, toinen pari pieniä alkulukuja ja kolmas on pari 1024 bittisiä lukuja, jotka vastaavat paremmin itse algoritmissa käytettävien lukujen pituutta.
 
-generate_keys funktio (rsa.py moduuli). Funktion palauttaa RSA-algoritmissa käytettävän julkis-, yksityisavain parin, joka koostuu kolmesta luvusta, eli luvusta N joka kuuluu molempiin avaimiin, luvusta e joka kuuluu julkiseen avaimeen ja luvusta d joka kuuluu yksityiseen avaimeen. Yksikkötestit testaavat että molempien avainparien pituus on 2, eli että ne koostuvat luvusta N ja joko luvusta e tai d. Tämän lisäksi testit testaavat että luku N on molemissa avainpareissa sama.
-
 ### Muut testit
+
+### Integraatiotestit
+
+get_prime funktion (primes.py moduuli) toiminta. Funktio hyödyntää funktioita sieve_of_eratosthenes, sample_odd_number ja miller_rabin_test. Sen on tarkoitus palauttaa 1024 bittinen alkuluku. Integraatiotestit luovat funktiolla luvun, jonka jälkeen ne testaavat että luku kuuluu välille [2^1023, 2^1024), luku on pariton ja että luku on alkuluku. Alkuluvun testaamiseen ei löydy Pythonin standardi kirjatosta mitään metodeja, joten päädyin käyttämään Sympy kirjastoa, josta löytyy matematiikka funktioita, sen testaamiseen, jos tähän löytyy parempi ratkaisu niin siirryyn käyttämään sitä.
+
+generate_keys funktio (rsa.py moduuli), joka kutsuu sisällään funktioita get_prime ja extended_euclidian_algorithm. Funktion palauttaa RSA-algoritmissa käytettävän julkis-, yksityisavain parin, joka koostuu kolmesta luvusta, eli luvusta N joka kuuluu molempiin avaimiin, luvusta e joka kuuluu julkiseen avaimeen ja luvusta d joka kuuluu yksityiseen avaimeen. Yksikkötestit testaavat että molempien avainparien pituus on 2, eli että ne koostuvat luvusta N ja joko luvusta e tai d. Tämän lisäksi testit testaavat että luku N on molemissa avainpareissa sama.
 
 ## Miten testit voi toistaa?
 
