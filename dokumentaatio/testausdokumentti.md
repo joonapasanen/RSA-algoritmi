@@ -18,6 +18,8 @@ get_prime funktion (primes.py moduuli) toiminta. Funktio hyödyntää yllä main
 
 Laajenettu Eukleideen -algoritmi (rsa.py moduuli). Algoritmi etsii suurimman yhteisen tekijän kahdelle eri luvulle, sekä sen Bezout kertoimet, eli kertoimet x, y joille pätee että xa + yb = gcd(a, b). Yksikkötestit testaavat että algoritmi löytää oikeat arvot x, y ja gcd(a, b) kolmelle eri syötteelle. Yksi näistä on pari pieniä yhdistettyjä lukuja, toinen pari pieniä alkulukuja ja kolmas on pari 1024 bittisiä lukuja, jotka vastaavat paremmin itse algoritmissa käytettävien lukujen pituutta.
 
+generate_keys funktio (rsa.py moduuli). Funktion palauttaa RSA-algoritmissa käytettävän julkis-, yksityisavain parin, joka koostuu kolmesta luvusta, eli luvusta N joka kuuluu molempiin avaimiin, luvusta e joka kuuluu julkiseen avaimeen ja luvusta d joka kuuluu yksityiseen avaimeen. Yksikkötestit testaavat että molempien avainparien pituus on 2, eli että ne koostuvat luvusta N ja joko luvusta e tai d. Tämän lisäksi testit testaavat että luku N on molemissa avainpareissa sama.
+
 ### Muut testit
 
 ## Miten testit voi toistaa?
