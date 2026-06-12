@@ -10,7 +10,7 @@ Ohjelma koostuu 3 moduulista; primes.py jota käytetään alkulukujen luontiin, 
 
 ## Laajojen kielimallien käyttö
 
-Olen käyttänyt ChatGPT:tä selittämään eri konsepteja, esim. algoritmiin liittyvästä matematiikasta. Tämän lisäksi olen pyytänyt sitä myös luomaan testeissä käytettyjä lukuja, esim. eräässä osassa testeissä käytetään 1024 bittisiä lukuja (joista eräässä esim. käytetään Carmichael lukuja) ja nämä ovat kielimallien luomien scriptien generoimia.
+Olen käyttänyt ChatGPT:tä selittämään eri konsepteja, esim. algoritmiin liittyvästä matematiikasta. Tämän lisäksi olen käyttänyt kielimalleja selittämään esim. vertaisarvioinissa olevien metodien toimintaa, jos jokin on ollut epäselvää ja myös etsimään lähteitä joista voin esim. löytää suuria alkulukuja.
 
 ## Käytetyt lähteet
 
@@ -19,3 +19,4 @@ Olen käyttänyt ChatGPT:tä selittämään eri konsepteja, esim. algoritmiin li
 - https://en.wikipedia.org/wiki/Euclidean_algorithm
 - https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test
 - https://cp-algorithms.com/algebra/extended-euclid-algorithm.html
+- https://factordb.com

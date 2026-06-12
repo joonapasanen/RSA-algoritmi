@@ -44,9 +44,9 @@ def sieve_of_eratosthenes(limit: int):
 
     return primes
 
-def miller_rabin_test(n: int, rounds=15):
+def miller_rabin_test(n: int, rounds=40):
     """Miller-Rabin-testi antaa stokastisen arvion siitä onko n alkuluku. 
-       10 kierrosta ilmoittaa oikean alkuluvun todennäköisyydellä 1 - (0.25)**15, joka on noin 0.999...
+       40 kierrosta ilmoittaa oikean alkuluvun todennäköisyydellä 1 - (0.25)**40, joka on noin 0.999...
 
     Args:
         n: Pariton luku, jota testi stokastisesti arvioi olevan alkuluku.

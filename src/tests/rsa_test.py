@@ -34,4 +34,3 @@ class TestGenerateKeys(unittest.TestCase):
 
     def test_keys_same_N(self):
         self.assertEqual(self.public_key[0], self.private_key[0])
-   
