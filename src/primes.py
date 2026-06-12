@@ -86,7 +86,9 @@ def get_prime():
     Returns:
         int: Todennäköinen alkuluku.
     """
-    small_primes_list = sieve_of_eratosthenes(500)
+
+    # Palauttaa 500 pienintä alkulukua
+    small_primes_list = sieve_of_eratosthenes(3571)
 
     p = None
     while not p:

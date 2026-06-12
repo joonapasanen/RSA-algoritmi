@@ -10,7 +10,7 @@ Ohjelma koostuu 3 moduulista; primes.py jota käytetään alkulukujen luontiin, 
 
 ## Laajojen kielimallien käyttö
 
-Olen käyttänyt ChatGPT:tä selittämään eri konsepteja, esim. algoritmiin liittyvästä matematiikasta. Tämän lisäksi olen käyttänyt kielimalleja selittämään esim. vertaisarvioinissa olevien metodien toimintaa, jos jokin on ollut epäselvää ja myös etsimään lähteitä joista voin esim. löytää suuria alkulukuja.
+Olen käyttänyt ChatGPT:tä ja Claudea selittämään eri konsepteja, esim. algoritmiin liittyvästä matematiikasta. Tämän lisäksi olen käyttänyt kielimalleja selittämään esim. vertaisarvioinissa olevien metodien toimintaa, jos jokin on ollut epäselvää ja myös etsimään lähteitä joista voin esim. löytää suuria alkulukuja.
 
 ## Käytetyt lähteet
 
