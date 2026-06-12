@@ -6,7 +6,17 @@ Ohjelma koostuu 3 moduulista; primes.py jota käytetään alkulukujen luontiin, 
 
 ## Saavutetut aika- ja tilavaativuudet
 
+Ohjelman metodien implementaatio vastaavat wikipediasta löytyviä pseudokoodi versioita. Listaan aika- ja tilavaativuudet alle:
+
+- Sieve of Eratosthenes: aikavaativuus on O(n loglog(n)) ja tilavaativuus on O(n).
+
+- Miller-Rabin: aikatilavuus on O(k\*n^3), jossa k on kierrosten määrä ja n syötteen pituus numeroina. Tilavaativuus on O(log(n)), jossa n on bittien määrä.
+
+- Laajenettu Eukleideen Algoritmi: aikatilavuus on O(log(min(a,b))) ja tilavaativuus on vakio O(1).
+
 ## Työn mahdolliset puutteet ja parannusehdotukset
+
+Työstä puuttuu joitain asioita (ohjeiden mukaisesti), joita löytyisi oikeasta RSA implementaatiosta, esimerkiksi padding olisi varmasti yksi tälläinen asia. Näiden asioiden implementaatio varmasti parantaisi projektia, mutta toisaalta työmäärä saattaisi nousta liian suureksi.
 
 ## Laajojen kielimallien käyttö
 
