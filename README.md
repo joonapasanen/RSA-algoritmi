@@ -19,3 +19,5 @@ RSA-algoritmin toteutus Pythonilla algoritmit ja tekoäly harjoitustyötä varte
 [Viikkoraportti 3](./dokumentaatio/viikkoraportti-3.md)
 
 [Viikkoraportti 4](./dokumentaatio/viikkoraportti-4.md)
+
+[Viikkoraportti 5](./dokumentaatio/viikkoraportti-5.md)
