@@ -10,6 +10,8 @@ RSA-algoritmin toteutus Pythonilla algoritmit ja tekoäly harjoitustyötä varte
 
 [Toteutusdokumentti](./dokumentaatio/toteutusdokumentti.md)
 
+[Käyttöohje](./dokumentaatio/kayttoohje.md)
+
 ## Viikkoraportit
 
 [Viikkoraportti 1](./dokumentaatio/viikkoraportti-1.md)
