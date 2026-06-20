@@ -26,8 +26,10 @@ generate_keys funktio (rsa.py moduuli), joka kutsuu sisällään funktioita get_
 
 ### Päästä päähän testaus
 
+end_to_end_test.py tiedostosta löytyy päästä-päähän-testi, joka syöttää ohjelmalle merkkijonon ja tarkistaa että salauksen ja purun jälkeen ohjelma palauttaa alkuperäisen merkkijonon takaisin.
+
 ## Miten testit voi toistaa?
 
-Testit voi suorittaa komennolla: poetry run coverage run --branch -m pytest
+Testit voi suorittaa komennolla: `poetry run coverage run --branch -m pytest`
 
-Ja tulostaa konsoliin komennolla: poetry run coverage report -m
+Ja tulostaa konsoliin komennolla: `poetry run coverage report -m`

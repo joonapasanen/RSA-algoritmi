@@ -1,13 +1,11 @@
 from rsa import generate_keys
 
-def message_interface():
+def message_interface(public_key, private_key):
     """Yksinkertainen konsolipohjainen käyttöliittymä, jossa käyttäjä voi lähettää ja vastaanottaa RSA:lla salattuja viestejä.
     """
 
     print("Interface started\n")
     
-    public_key, private_key = generate_keys()
-
     N, e = public_key
     _, d = private_key
 
@@ -18,12 +16,12 @@ def message_interface():
     input()
 
     while True:
-        print("Enter 's' to send a message or 'r' to receive the last message from the queue:")
+        print("Enter 's' to send a message, 'r' to receive the last message from the queue or 'q' to quit:")
         mode = input().strip().lower()
 
-        if (mode != 's' and mode != 'r'):
+        if (mode != 's' and mode != 'r' and mode != 'q'):
             print(mode)
-            print("Enter 's' or 'r'.\n")
+            print("Enter 's', 'r' or 'q'.\n")
             continue
 
         elif (mode == 's'):
@@ -49,6 +47,10 @@ def message_interface():
             else:
                 print("No messages in queue.")
             continue
+    
+        elif (mode == 'q'):
+            return
 
 if __name__ == "__main__":
-    message_interface()
+    public_key, private_key = generate_keys()
+    message_interface(public_key, private_key)
