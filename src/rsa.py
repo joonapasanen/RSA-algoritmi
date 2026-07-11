@@ -23,7 +23,6 @@ def extended_euclidian_algorithm(a: int, b: int):
         y = temp
 
     return x
-    
 
 def generate_keys():
     """Luo RSA algoritmissa käytettävän julkis- ja yksityisavaimen
@@ -53,3 +52,11 @@ def generate_keys():
     private_key = (N, d)
 
     return public_key, private_key
+
+def encrypt_message(base, key):
+    N, e = key
+    return pow(base, e, N)
+
+def decrypt_message(base, key):
+    N, d = key
+    return pow(base, d, N)

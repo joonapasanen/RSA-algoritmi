@@ -98,9 +98,8 @@ def get_prime():
             if num % small_prime == 0:
                 break
  
-        if not miller_rabin_test(num, rounds=10):
+        if not miller_rabin_test(num):
             continue
-        else:
-            p = num
+        p = num
 
     return p
