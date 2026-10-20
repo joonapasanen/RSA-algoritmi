@@ -94,10 +94,9 @@ def get_prime():
     while not p:
         num = sample_odd_number()
 
-        for small_prime in small_primes_list:
-            if num % small_prime == 0:
-                break
- 
+        if any(num % small_prime == 0 for small_prime in small_primes_list):
+            continue
+
         if not miller_rabin_test(num):
             continue
         p = num
